@@ -10,34 +10,36 @@ class ProfileEdit extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.grey.shade200,
-        child: Column(
-          children: [
-            TitleBar(
-              icon: Icon(Icons.arrow_back_ios),
-              pageTitle: 'Account Edit',
-              callbackFunction: () => Get.back(),
-            ),
-            SizedBox(
-              height: 160,
-            ),
-            myTextField(
-                Icon(Icons.perm_identity), 'Name', nameController, 'User Name'),
-            myTextField(Icon(Icons.mail), 'Email', emailController, 'Email'),
-            SizedBox(
-              height: 50,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  controller.userUpdate(
-                      nameController.text, emailController.text);
-                  // controller.update();
-                  Get.back();
-                },
-                child: Text('Update'))
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: Colors.grey.shade200,
+          child: Column(
+            children: [
+              TitleBar(
+                icon: Icon(Icons.arrow_back_ios),
+                pageTitle: 'Account Edit',
+                callbackFunction: () => Get.back(),
+              ),
+              SizedBox(
+                height: 160,
+              ),
+              myTextField(Icon(Icons.perm_identity), 'Name', nameController,
+                  'User Name'),
+              myTextField(Icon(Icons.mail), 'Email', emailController, 'Email'),
+              SizedBox(
+                height: 50,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    controller.userUpdate(
+                        nameController.text, emailController.text);
+                    // controller.update();
+                    Get.back();
+                  },
+                  child: Text('Update'))
+            ],
+          ),
         ),
       ),
     );
