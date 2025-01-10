@@ -21,13 +21,9 @@ class UserController extends GetxController {
       user?.password = '';
       user?.number = '';
     });
+    // user.value=UserModel(userName: userName, email: email, number: number, password: password);
 
-    // user.value.userName = userName;
-    // user.value.email = userName;
-    // user.value.number = userName;
-    // user.value.password = userName;
-    // name.value = userName;
-    // user(Usermodel(userName: userName, email: email, number: '', password: ''));
+    // user(UserModel(userName: userName, email: email, number: '', password: ''));
     print('username value:${user.value.userName}');
     print('Email value:${user.value.email}');
     // update();
@@ -36,10 +32,7 @@ class UserController extends GetxController {
 }
 
 class userimageController extends GetxController {
-  var imageModel = userImageModel(
-          path:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRPWpO-12m19irKlg8znjldmcZs5PO97B6A&s")
-      .obs;
+  var imageModel = userImageModel(path: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRPWpO-12m19irKlg8znjldmcZs5PO97B6A&s").obs;
   void updateImage(path) {
     imageModel.update((Value) {
       Value?.path = path;
